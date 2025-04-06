@@ -1,6 +1,6 @@
 #include <vtkAutoInit.h>
-VTK_MODULE_INIT(vtkRenderingOpenGL2);   // ³õÊ¼»¯OpenGLäÖÈ¾ºó¶Ë
-VTK_MODULE_INIT(vtkInteractionStyle);  // ³õÊ¼»¯½»»¥·ç¸ñ
+VTK_MODULE_INIT(vtkRenderingOpenGL2);   // åˆå§‹åŒ–OpenGLæ¸²æŸ“åç«¯
+VTK_MODULE_INIT(vtkInteractionStyle);  // åˆå§‹åŒ–äº¤äº’é£æ ¼
 
 #include <iostream>
 
@@ -35,17 +35,17 @@ int main()
     auto data = coneActor->GetPosition();
     auto render = vtkRenderer::New();
     render->AddActor(coneActor);
-    render->SetBackground(0.2, 0.3, 0.4);  // ÉèÖÃ±³¾°É«
+    render->SetBackground(0.2, 0.3, 0.4);  // è®¾ç½®èƒŒæ™¯è‰²
 
 
     auto window = vtkRenderWindow::New(); 
     window->AddRenderer(render);
-    window->SetSize(800, 600);  // ÉèÖÃ´°¿Ú³ß´ç
+    window->SetSize(800, 600);  // è®¾ç½®çª—å£å°ºå¯¸
 
-    // ½»»¥Æ÷³õÊ¼»¯
+    // äº¤äº’å™¨åˆå§‹åŒ–
     auto interactor = vtkSmartPointer<vtkRenderWindowInteractor>::New();
     interactor->SetRenderWindow(window);
-    interactor->Initialize();  // ±ØĞë³õÊ¼»¯
-    interactor->Start();       // Æô¶¯ÊÂ¼şÑ­»·
+    interactor->Initialize();  // å¿…é¡»åˆå§‹åŒ–
+    interactor->Start();       // å¯åŠ¨äº‹ä»¶å¾ªç¯
     return 0;
 }
